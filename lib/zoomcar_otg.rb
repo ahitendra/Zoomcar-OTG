@@ -1,6 +1,5 @@
 require "zoomcar_otg/version"
 require "rest-client"
-# require "URI"
 require "JSON"
 
 require_relative "zoomcar_otg/user.rb"

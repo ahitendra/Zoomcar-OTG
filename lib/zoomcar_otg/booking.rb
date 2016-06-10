@@ -9,10 +9,6 @@ module ZoomcarOtg
 			@token = token
 		end
 
-		def checkout
-
-		end
-
 		def create(options = {})
 			url = ZoomcarOtg::HOST + "v4/bookings"
 			post(url, options)
@@ -21,10 +17,6 @@ module ZoomcarOtg
 		def confirm_payment(options = {})
 			url = ZoomcarOtg::HOST + "v4/bookings/confirm_payment"
 			post(url, options)
-		end
-
-		def promo
-
 		end
 
 		def request_cancellation(options = {})

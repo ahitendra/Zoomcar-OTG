@@ -14,20 +14,14 @@ module ZoomcarOtg
 			get(url, options)
 		end
 
-		def signup
-
+		def upload_license(options = {})
+			url = ZoomcarOtg::HOST + "v4/users/license_upload"
+			post(url, options)
 		end
 
-		def signin
-
-		end
-
-		def upload_license
-
-		end
-
-		def licenses
-
+		def licenses(options = {})
+			url = ZoomcarOtg::HOST + "v4/users/licenses"
+			post(url, options)
 		end
 
 	end
