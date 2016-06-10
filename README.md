@@ -7,7 +7,7 @@ Welcome to your new gem! This gem helps you to book Zoomcar from your plat form 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'zoomcar_otg'
+gem 'zoomcar_otg', :git => "https://github.com/ahitendra/Zoomcar-OTG"
 ```
 
 And then execute:
@@ -26,7 +26,7 @@ To check validity of your partner token:
 ZoomcarOtg::is_token_vailid?(<autherization_token>)
 ```
 
-Create an user's object to get any particular user related data:
+Create an user object to get any particular user related data:
 ```ruby
 user = ZoomcarOtg::User.new(<autherization_token>)
 ```
@@ -37,19 +37,19 @@ auth_token = user.auth_token({:email => <email id>, :name => <name>, :phone => <
 ```
 To upload user's license:
 ```ruby
-user.upload_license({:auth_token => <auth_token>, :image_data => <Base64 encoded>, :image_format => <image format>})
+user.upload_license({:auth_token => <auth_token>, :image_data => <Base64 encoded data>, :image_format => <image format>})
 ```
-To upload user's licenses:
+To get user's licenses:
 ```ruby
 user.licenses({:auth_token => <auth_token>})
 ```
 
-Create a search object to search for the available cars:
+Create a search object to get available cars in a city:
 ```ruby
 search = ZoomcarOtg::Search.new(<autherization_token>)
 ```
 
-To Search for any duration for particular city:
+To get available cars in a particular city for a given duration:
 ```ruby
 results = search.zoom_later({:city => <city name>, :starts => <start time>, :ends => <end time>})
 ```
@@ -65,7 +65,7 @@ search = ZoomcarOtg::Booking.new(<autherization_token>)
 
 To get booking id and to get the amount to be paid:
 ```ruby
-booking.create({:auth_token => <user token>, :city => <city name>, :starts => <start time>, :ends => <end time>, :location_id => <location_id>, :cargroup_id => <car id>, :pricing_id => "pricing id"})
+booking.create({:auth_token => <user token>, :city => <city name>, :starts => <start time>, :ends => <end time>, :location_id => <location_id>, :cargroup_id => <car id>, :pricing_id => <pricing id>})
 ```
 
 After taking the booking's payment by you, to confirm the payment:
