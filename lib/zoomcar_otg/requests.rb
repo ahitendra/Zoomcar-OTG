@@ -4,7 +4,7 @@ module ZoomcarOtg
 		def post(url, payload)
 			begin
 				url = URI.encode(url)
-				response = RestClient::Request.execute(url: url, method: 'post', payload: payload, headers: {:Authorization => 'Token token=#{@token}'})
+				response = RestClient::Request.execute(url: url, method: 'post', payload: payload, headers: {:Authorization => "Token token=#{@token}"})
 				JSON.parse(response)
 			rescue => e
 				JSON.parse(e.response)
@@ -14,7 +14,7 @@ module ZoomcarOtg
 		def get(url, params)
 			begin
 				url = URI.encode(url)
-				response = RestClient.get(url, params: params, headers: {:Authorization => 'Token token=#{@token}'})
+				response = RestClient::Request.execute(url: url, method: 'get', payload: payload, headers: {:Authorization => "Token token=#{@token}"})
 				JSON.parse(response)
 			rescue => e
 				JSON.parse(e.response)
