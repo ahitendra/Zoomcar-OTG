@@ -9,6 +9,11 @@ module ZoomcarOtg
 			@token = token
 		end
 
+		def auth_token(options = {})
+			url = ZoomcarOtg::HOST + "v4/users/auth_token"
+			get(url, options)
+		end
+
 		def signup
 
 		end

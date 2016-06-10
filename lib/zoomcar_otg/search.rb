@@ -9,8 +9,13 @@ module ZoomcarOtg
 			@token = token
 		end
 
-		def airport(options = {})
+		def zoom_later(options = {})
 			url = ZoomcarOtg::HOST + "v4/searches/zoom_later"
+			get(url, options)
+		end
+
+		def airport(options = {})
+			url = ZoomcarOtg::HOST + "v4/searches/airport"
 			get(url, options)
 		end
 

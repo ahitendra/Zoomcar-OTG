@@ -13,20 +13,28 @@ module ZoomcarOtg
 
 		end
 
-		def create
+		def create(options = {})
+			url = ZoomcarOtg::HOST + "v4/bookings"
+			post(url, options)
+		end
 
+		def confirm_payment(options = {})
+			url = ZoomcarOtg::HOST + "v4/bookings/confirm_payment"
+			post(url, options)
 		end
 
 		def promo
 
 		end
 
-		def initiate_cancel
-
+		def request_cancellation(options = {})
+			url = ZoomcarOtg::HOST + "v4/bookings/cancel_initiation"
+			post(url, options)
 		end
 
-		def confirm_cancellation
-
+		def confirm_cancellation(options = {})
+			url = ZoomcarOtg::HOST + "v4/bookings/cancel_confirmation"
+			post(url, options)
 		end
 	end
 
