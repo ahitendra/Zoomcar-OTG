@@ -1,9 +1,12 @@
+require_relative "requests.rb"
 module ZoomcarOtg
 
 	class User
 
-		def initialize
+		include ZoomcarOtg::Requests
 
+		def initialize(token = nil)
+			@token = token
 		end
 
 		def signup
@@ -21,7 +24,7 @@ module ZoomcarOtg
 		def licenses
 
 		end
-		
+
 	end
 
 end
