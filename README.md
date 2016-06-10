@@ -20,15 +20,15 @@ Or install it yourself as:
 
 ## Usage
 
-To check your validity of you partner token:
+To check validity of your partner token:
 
 ```ruby
-ZoomcarOtg::is_token_vailid?(<Autherization token>)
+ZoomcarOtg::is_token_vailid?(<autherization_token>)
 ```
 
 Create an user's object to get any particular user related data:
 ```ruby
-user = ZoomcarOtg::User.new(< Autherization token>)
+user = ZoomcarOtg::User.new(<autherization_token>)
 ```
 
 To get authenticity token of any particular user:
@@ -46,7 +46,7 @@ user.licenses({:auth_token => <auth_token>})
 
 Create a search object to search for the available cars:
 ```ruby
-search = ZoomcarOtg::Search.new(< Autherization token>)
+search = ZoomcarOtg::Search.new(<autherization_token>)
 ```
 
 To Search for any duration for particular city:
@@ -60,7 +60,7 @@ results = search.airport({:city => <city name>, :starts => <start time>, :ends =
 ```
 Create a booking object to book any car:
 ```ruby
-search = ZoomcarOtg::Booking.new(<Autherization token>)
+search = ZoomcarOtg::Booking.new(<autherization_token>)
 ```
 
 To get booking id and to get the amount to be paid:
