@@ -23,12 +23,30 @@ Or install it yourself as:
 To check your validity of you partner token:
 
 ```ruby
-ZoomcarOtg::is_token_vailid?(<token>)
+ZoomcarOtg::is_token_vailid?(<Autherization token>)
+```
+
+Create an user's object to get any particular user related data:
+```ruby
+user = ZoomcarOtg::User.new(< Autherization token>)
+```
+
+To get authenticity token of any particular user:
+```ruby
+auth_token = user.auth_token({:email => <email id>, :name => <name>, :phone => <phone number>})
+```
+To upload user's license:
+```ruby
+user.upload_license({:auth_token => <auth_token>, :image_data => <Base64 encoded>, :image_format => <image format>})
+```
+To upload user's licenses:
+```ruby
+user.licenses({:auth_token => <auth_token>})
 ```
 
 Create a search object to search for the available cars:
 ```ruby
-search = ZoomcarOtg::Search.new(<token>)
+search = ZoomcarOtg::Search.new(< Autherization token>)
 ```
 
 To Search for any duration for particular city:
@@ -42,12 +60,25 @@ results = search.airport({:city => <city name>, :starts => <start time>, :ends =
 ```
 Create a booking object to book any car:
 ```ruby
-search = ZoomcarOtg::Booking.new(<token>)
+search = ZoomcarOtg::Booking.new(<Autherization token>)
 ```
 
-To book any car:
+To get booking id and to get the amount to be paid:
 ```ruby
 booking.create({:auth_token => <user token>, :city => <city name>, :starts => <start time>, :ends => <end time>, :location_id => <location_id>, :cargroup_id => <car id>, :pricing_id => "pricing id"})
+```
+
+After taking the booking's payment by you, to confirm the payment:
+```ruby
+booking.confirm_payment({:auth_token => <user auth token>, :booking_id => <booking is you got above>, :amount => <the amount you have taken for the corresponsing booking>})
+```
+To initiate the cancellation and to know the refundable amount of any particular booking:
+```ruby
+booking.request_cancellation({:auth_token => <user auth token>, :booking_id => <booking id>})
+```
+To confirm the cancellation:
+```ruby
+booking.confirm_cancellation({:auth_token => <user auth token>, :booking_id => <booking id>})
 ```
 
 ## Development
