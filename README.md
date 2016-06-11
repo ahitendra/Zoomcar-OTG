@@ -23,12 +23,12 @@ Or install it yourself as:
 To check validity of your partner token:
 
 ```ruby
-ZoomcarOtg::is_token_vailid?(<autherization_token>)
+ZoomcarOtg::is_token_vailid?(<authorization_token>)
 ```
 
 Create an user object to get any particular user related data:
 ```ruby
-user = ZoomcarOtg::User.new(<autherization_token>)
+user = ZoomcarOtg::User.new(<authorization_token>)
 ```
 
 To get authenticity token of any particular user:
@@ -46,7 +46,7 @@ user.licenses({:auth_token => <auth_token>})
 
 Create a search object to get available cars in a city:
 ```ruby
-search = ZoomcarOtg::Search.new(<autherization_token>)
+search = ZoomcarOtg::Search.new(<authorization_token>)
 ```
 
 To get available cars in a particular city for a given duration:
@@ -60,7 +60,7 @@ results = search.airport({:city => <city name>, :starts => <start time>, :ends =
 ```
 Create a booking object to book any car:
 ```ruby
-search = ZoomcarOtg::Booking.new(<autherization_token>)
+search = ZoomcarOtg::Booking.new(<authorization_token>)
 ```
 
 To get booking id and to get the amount to be paid:
@@ -70,7 +70,7 @@ booking.create({:auth_token => <user token>, :city => <city name>, :starts => <s
 
 After taking the booking's payment by you, to confirm the payment:
 ```ruby
-booking.confirm_payment({:auth_token => <user auth token>, :booking_id => <booking is you got above>, :amount => <the amount you have taken for the corresponsing booking>})
+booking.confirm_payment({:auth_token => <user auth token>, :booking_id => <booking id you got above>, :amount => <the amount you have taken for the corresponsing booking>})
 ```
 To initiate the cancellation and to know the refundable amount of any particular booking:
 ```ruby
@@ -89,7 +89,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/zoomcar_otg. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ahitendra/zoomcar_otg. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
