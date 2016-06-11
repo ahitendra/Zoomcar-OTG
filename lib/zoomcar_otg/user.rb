@@ -26,7 +26,7 @@ module ZoomcarOtg
 
 		def license_status(options = {})
 			url = ZoomcarOtg::HOST + "v4/users/license_status"
-			post(url, options)
+			get(url, options)
 		end
 	end
 
