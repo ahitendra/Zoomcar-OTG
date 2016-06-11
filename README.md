@@ -85,6 +85,14 @@ To confirm the cancellation:
 ```ruby
 booking.confirm_cancellation({:auth_token => <user auth token>, :booking_id => <booking id>})
 ```
+To get some specific data:
+```ruby
+data = ZoomcarOtg::Data.new(<authorization_token>)
+```
+To get live bookings' users data with in the given radius of a geo location:
+```ruby
+data.live_bookings_details({:lat => <latitude>, :lng => <longitude>, :radius => <radius>})
+```
 
 ## Development
 

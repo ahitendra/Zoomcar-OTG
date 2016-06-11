@@ -6,6 +6,7 @@ require_relative "zoomcar_otg/user.rb"
 require_relative "zoomcar_otg/booking.rb"
 require_relative "zoomcar_otg/search.rb"
 require_relative "zoomcar_otg/requests.rb"
+require_relative "zoomcar_otg/data.rb"
 
 module ZoomcarOtg
 
