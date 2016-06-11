@@ -65,7 +65,7 @@ results = search.airport({:city => <city name>, :starts => <start time>, :ends =
 ```
 Create a booking object to book any car:
 ```ruby
-search = ZoomcarOtg::Booking.new(<authorization_token>)
+booking = ZoomcarOtg::Booking.new(<authorization_token>)
 ```
 
 To get booking id and to get the amount to be paid:
