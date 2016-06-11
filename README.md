@@ -35,6 +35,11 @@ To get authenticity token of any particular user:
 ```ruby
 auth_token = user.auth_token({:email => <email id>, :name => <name>, :phone => <phone number>})
 ```
+To get user's license status:
+```ruby
+user.license_status({:auth_token => <auth_token>})
+```
+
 To upload user's license:
 ```ruby
 user.upload_license({:auth_token => <auth_token>, :image_data => <Base64 encoded data>, :image_format => <image format>})
